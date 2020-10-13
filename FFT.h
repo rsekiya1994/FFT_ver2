@@ -5,6 +5,7 @@
 #include <cassert>
 #include <complex>
 #include <cmath>
+#include <vector>
 
 int binary_inversion(int N, int digit){
   int a = 0;
@@ -62,7 +63,7 @@ template <class InputIterator, class OutputIterator>
   /////// Input data to aft_btfly[0][i] ///////
   for(int i = 0 ; i < n_sample ; i++){
     int bit_inv_i = binary_inversion(i, n);
-    aft_btfly[0][i] = { *(data_first + bit_inv_i), 0 };
+    aft_btfly[0][i] = { static_cast<double>(*(data_first + bit_inv_i)), 0 };
   }
   
   // ------ FFT ------ //
@@ -122,7 +123,7 @@ template <class InputIterator, class OutputIterator>
   /////// Input data to aft_btfly[0][i] ///////
   for(int i = 0 ; i < n_sample ; i++){
     int bit_inv_i = binary_inversion(i, n);
-    aft_btfly[0][i] = { *(in_first_Re + bit_inv_i), *(in_first_Im + bit_inv_i) * (-1)};
+    aft_btfly[0][i] = { static_cast<double>(*(in_first_Re + bit_inv_i) ), static_cast<double>(*(in_first_Im + bit_inv_i) ) * (-1)};
   }
   
   // ------ FFT ------ //
