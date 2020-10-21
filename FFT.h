@@ -31,7 +31,7 @@ T power(T const &x, long long N){
   return result;
 }
 
-<template <class InputIterator, class OutputIterator>
+template <class InputIterator, class OutputIterator>
   void FFT(int n_sample, InputIterator  data_first,
 	   OutputIterator real_first, OutputIterator imag_first){
   // ------ size investigation ------ //
